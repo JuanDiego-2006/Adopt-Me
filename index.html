@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Inicio</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo-container">
+            <i class="fas fa-paw logo-icon"></i>
+            <span>Adopt-Me</span>
+        </a>
+
+        <nav class="nav-menu">
+            <a href="html/vistachat.html" class="nav-link">
+                <i class="far fa-comment-dots"></i> Mensajes
+            </a>
+            
+            <a href="html/mis-visitas.html" class="nav-link">
+                <i class="far fa-calendar-alt"></i> Mis Visitas
+            </a>
+
+            <a href="html/comoadoptar.html" class="nav-link">Cómo Adoptar</a>
+            <a href="html/nosotros.html" class="nav-link">Nosotros</a>
+            
+            <div class="header-buttons" id="botones-invitado">
+                <a href="html/login.html" class="btn btn-outline">Iniciar Sesión</a>
+                <a href="html/registro.html" class="btn btn-solid">Registrarse</a>
+            </div>
+
+            <div class="user-profile" id="panel-usuario" style="display: none;">
+                <a href="html/perfil.html" class="profile-link-wrapper">
+                    <span class="user-name">Hola, <b id="nombre-display">Usuario</b></span>
+                    <img src="https://ui-avatars.com/api/?name=User&background=FF6600&color=fff" alt="Avatar" class="avatar-img">
+                </a>
+                <button onclick="cerrarSesion()" class="btn-logout" title="Cerrar Sesión">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="hero-section">
+            <h1>Encuentra a tu Nuevo Mejor Amigo</h1>
+            <div class="underline"></div>
+
+            <div class="filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Pequeño</button>
+                <button class="filter-btn">Mediano</button>
+                <button class="filter-btn">Grande</button>
+                <button class="filter-btn">Adulto</button>
+                <button class="filter-btn">Senior</button>
+            </div>
+        </section>
+
+        <section class="pets-grid">
+            
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge disponible">Disponible</span>
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" alt="Max">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Max, <span>1 año</span></h3>
+                    </div>
+                    <p class="breed">Golden Retriever</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge pendiente">Pendiente</span>
+                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=600&q=80" alt="Bella">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Bella, <span>6 meses</span></h3>
+                    </div>
+                    <p class="breed">Beagle Mix</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge adoptado">Adoptado</span>
+                    <img src="https://images.unsplash.com/photo-1591769225440-811ad7d6eca6?auto=format&fit=crop&w=600&q=80" alt="Charlie">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Charlie, <span>3 años</span></h3>
+                    </div>
+                    <p class="breed">Labrador</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge disponible">Disponible</span>
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Luna">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Luna, <span>4 meses</span></h3>
+                    </div>
+                    <p class="breed">Bulldog</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge disponible">Disponible</span>
+                    <img src="https://images.unsplash.com/photo-1563889958749-6bb6c1284eb3?auto=format&fit=crop&w=600&q=80" alt="Rocky">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Rocky, <span>2 años</span></h3>
+                    </div>
+                    <p class="breed">Husky</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pet-card">
+                <div class="card-image">
+                    <span class="badge pendiente">Pendiente</span>
+                    <img src="https://images.unsplash.com/photo-1612536050381-7110fd254803?auto=format&fit=crop&w=600&q=80" alt="Coco">
+                </div>
+                <div class="card-info">
+                    <div class="pet-header">
+                        <h3>Coco, <span>8 meses</span></h3>
+                    </div>
+                    <p class="breed">Corgi</p>
+                    <div class="card-footer">
+                        <button class="heart-btn"><i class="far fa-heart"></i></button>
+                        <button class="btn-conocer">Conocer</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="modal-mascota" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <span class="modal-badge">Disponible</span>
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" alt="Max">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-header-text">
+                        <h2>Max, <span>1 año</span></h2>
+                        <p class="modal-breed">Golden Retriever</p>
+                    </div>
+                    <div class="modal-details-list">
+                        <div class="detail-item">
+                            <div class="icon-sq"><i class="far fa-calendar-alt"></i></div>
+                            <div><small>Edad</small><p>1 año (12 meses)</p></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="icon-sq"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><small>Refugio</small><p>Refugio Patitas Felices</p></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="icon-sq"><i class="fas fa-heartbeat"></i></div>
+                            <div><small>Estado</small><p class="text-green">Vacunado, Esterilizado</p></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="icon-sq"><i class="fas fa-info-circle"></i></div>
+                            <div><small>Condición</small><p class="text-green">Sin discapacidades</p></div>
+                        </div>
+                    </div>
+                    <div class="modal-description">
+                        <h3>Sobre Max</h3>
+                        <p>Max es un Golden Retriever muy cariñoso y juguetón. Le encanta correr en el parque y jugar con pelotas.</p>
+                    </div>
+                    
+                    <div class="modal-buttons-container">
+                        <button class="btn-adoptar-modal" onclick="irASolicitud()">
+                            <i class="far fa-heart"></i> Quiero Adoptarlo
+                        </button>
+                        
+                        <button class="btn-agendar-modal" onclick="irAAgendar()">
+                            <i class="far fa-calendar-alt"></i> Agendar Visita
+                        </button>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

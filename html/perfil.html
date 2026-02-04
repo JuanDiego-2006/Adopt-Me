@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Mi Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="profile-header">
+        <div class="header-left">
+            <a href="../index.html" class="close-btn"><i class="fas fa-times"></i></a>
+            <div class="header-titles">
+                <h1>Mi Perfil</h1>
+                <p>Gestiona tu información personal</p>
+            </div>
+        </div>
+        <button class="btn-edit-profile"><i class="fas fa-pen"></i> Editar Perfil</button>
+    </header>
+
+    <main class="profile-content">
+
+        <div class="card user-card">
+            <div class="user-info-header">
+                <div class="avatar-container">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Avatar">
+                </div>
+                <div class="user-details">
+                    <h2>María García</h2>
+                    <p class="user-email">juanita@adopt-me.com</p>
+                    <div class="badges">
+                        <span class="badge-member">Miembro desde enero de 2026</span>
+                        <span class="badge-verified"><i class="fas fa-check"></i> Perfil Verificado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-block">
+                <div class="section-header">
+                    <h3>Sobre mí</h3>
+                    <i class="fas fa-pencil-alt edit-icon"></i>
+                </div>
+                <p class="description-text">Amante de los animales desde pequeña. Busco darle un hogar lleno de amor a un perrito que lo necesite.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-header">
+                <h3>Información de Contacto</h3>
+                <i class="fas fa-pencil-alt edit-icon"></i>
+            </div>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="icon-box"><i class="far fa-envelope"></i></div>
+                    <div class="info-text">
+                        <small>Correo Electrónico</small>
+                        <p>juanita@adopt-me.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info-text">
+                        <small>Teléfono</small>
+                        <p>+52 55 1234 5678</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <small>Dirección</small>
+                        <p>Calle Principal #123</p>
+                        <p>Ciudad de México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-header">
+                <h3>Información del Hogar</h3>
+                <i class="fas fa-pencil-alt edit-icon"></i>
+            </div>
+
+            <div class="info-item home-type">
+                <div class="icon-box"><i class="fas fa-home"></i></div>
+                <div class="info-text">
+                    <small>Tipo de Vivienda</small>
+                    <p>Casa</p>
+                </div>
+            </div>
+
+            <div class="tags-container">
+                <span class="home-tag">Tengo jardín o patio</span>
+                <span class="home-tag">Tengo otras mascotas</span>
+            </div>
+
+            <div class="info-item experience-item">
+                <div class="icon-box orange"><i class="far fa-heart"></i></div>
+                <div class="info-text">
+                    <small>Experiencia con Mascotas</small>
+                    <p>Intermedia</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-card">
+            <h3 class="stats-title">Mis Estadísticas</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Adopciones</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Favoritos</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Visitas Agendadas</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Mensajes</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-logout-large" onclick="cerrarSesionCompleta()">
+            Cerrar Sesión
+        </button>
+
+    </main>
+
+    <script src="../js/perfil.js"></script>
+</body>
+</html>

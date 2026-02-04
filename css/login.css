@@ -1,0 +1,179 @@
+/* Reseteo básico para evitar espacios raros */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --naranja: #FF6600;
+    --blanco: #ffffff;
+    --texto-gris: #666;
+    --fondo-input: #f4f4f4;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.login-container {
+    display: flex;
+    width: 900px;
+    height: 550px;
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- ESTILOS DE LA IMAGEN (IZQUIERDA) --- */
+.login-image {
+    flex: 1;
+    /* Ajusta aquí si tu imagen tiene otro nombre */
+    background-image: url('/imagenes/imagenperrito.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Indispensable para que el texto flote encima */
+}
+
+/* TEXTO SOBRE LA IMAGEN (CORREGIDO) */
+.overlay-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: auto;
+    
+    /* Forzamos que no haya fondo ni bordes */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    
+    color: var(--blanco);
+    text-align: left;
+    z-index: 5;
+}
+
+.overlay-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra suave para leer mejor */
+}
+
+.overlay-text .heart {
+    margin-right: 8px;
+    color: var(--blanco);
+}
+
+.overlay-text p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- ESTILOS DEL FORMULARIO (DERECHA) --- */
+.login-form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 320px;
+}
+
+h1 {
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--texto-gris);
+    font-size: 14px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: var(--fondo-input);
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 0 2px var(--naranja);
+    background-color: #fff;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 30px;
+    color: var(--texto-gris);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: var(--naranja);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--naranja);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+}

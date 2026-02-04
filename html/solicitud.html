@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Solicitud</title>
+    <link rel="stylesheet" href="../css/solicitud.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="../index.html" class="logo-container">
+            <i class="fas fa-paw logo-icon"></i>
+            <span>Adopt-Me</span>
+        </a>
+
+        <nav class="nav-menu">
+            <a href="vistachat.html" class="nav-link">
+                <i class="far fa-comment-dots"></i> Mensajes
+            </a>
+            
+            <a href="comoadoptar.html" class="nav-link">Cómo Adoptar</a>
+            
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            
+            <div class="user-profile-icon">
+                <i class="far fa-user"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div class="page-header">
+            <h1>Solicitud de Adopción</h1>
+            <div class="underline"></div>
+            <p>¡Gracias por elegir salvar una vida! Este formulario es el primer paso.</p>
+        </div>
+
+        <div class="form-card">
+            <form id="adoptionForm">
+                
+                <h3 class="section-title">Información Personal</h3>
+                
+                <div class="form-row">
+                    <div class="input-group" style="flex: 2;">
+                        <label>Nombre Completo</label>
+                        <input type="text" placeholder="" required>
+                    </div>
+                    <div class="input-group" style="flex: 1;">
+                        <label>Edad</label>
+                        <input type="number" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Ocupación</label>
+                    <input type="text" placeholder="" required>
+                </div>
+
+                <h3 class="section-title">Experiencia con Mascotas</h3>
+
+                <div class="input-group">
+                    <label>¿Por qué desea adoptar?</label>
+                    <input type="text" placeholder="" required>
+                </div>
+
+                <div class="input-group">
+                    <label>¿Tienes mascotas actualmente?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="mascotas_actuales" value="si"> Sí
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="mascotas_actuales" value="no"> No
+                        </label>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Tu Hogar</h3>
+
+                <div class="input-group">
+                    <label>En caso de vivir en un lugar rentado, ¿Tus arrendadores permiten animales?</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="input-group">
+                    <label>¿Tienes espacio suficiente para que el perro se sienta cómodo?</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <script src="../js/solicitud.js"></script>
+</body>
+</html>

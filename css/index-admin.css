@@ -1,0 +1,203 @@
+/* --- Heredamos estilos base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: #f8f9fa; color: #333; }
+a { text-decoration: none; }
+
+/* HEADER */
+.main-header {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo-container { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #333; }
+.logo-icon { color: #FF6600; font-size: 26px; }
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-link { color: #666; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+.nav-link:hover { color: #FF6600; }
+
+.user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.user-profile-icon { font-size: 20px; color: #666; }
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.admin-header-row h1 { font-size: 32px; color: #222; margin-bottom: 5px; }
+.underline { width: 60px; height: 4px; background-color: #FF6600; margin-bottom: 30px; border-radius: 2px; }
+
+/* BARRA DE HERRAMIENTAS (Filtros + Agregar) */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filters { display: flex; gap: 10px; }
+.filter-btn { padding: 8px 20px; border: 1px solid #eee; background-color: #fff; border-radius: 6px; color: #555; font-weight: 500; cursor: pointer; }
+.filter-btn.active { background-color: #FF6600; color: white; border-color: #FF6600; }
+
+/* BOTÓN AGREGAR (AZUL) */
+.btn-add {
+    background-color: #2F80ED;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+.btn-add:hover { background-color: #1d5cb0; }
+
+/* GRID DE TARJETAS */
+.pets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+
+.pet-card {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee;
+}
+
+.card-image { width: 100%; height: 250px; position: relative; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.badge { position: absolute; top: 15px; right: 15px; padding: 4px 12px; border-radius: 20px; color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+.badge.disponible { background-color: #28a745; }
+.badge.pendiente { background-color: #ffc107; color: #333; }
+.badge.adoptado { background-color: #007bff; }
+
+.card-info { padding: 20px; }
+.pet-header h3 { font-size: 18px; color: #222; }
+.pet-header h3 span { font-weight: 400; color: #777; font-size: 16px; margin-left: 5px; }
+.breed { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+/* BOTÓN EDITAR (NARANJA DERECHA) */
+.card-footer-admin {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-editar {
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+.btn-editar:hover { background-color: #e65c00; }
+
+/* ========================================= */
+/* ESTILOS NUEVOS DEL MODAL DE EDICIÓN       */
+/* ========================================= */
+
+.hidden { display: none !important; }
+
+.modal-overlay-edit {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px;
+}
+
+.modal-card-edit {
+    background: white; width: 1000px; height: 650px;
+    border-radius: 20px; overflow: hidden; display: flex;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* --- IZQUIERDA (FOTO) --- */
+.modal-left {
+    flex: 1; position: relative; background: #eee;
+}
+.modal-left img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+.btn-close-circle {
+    position: absolute; top: 20px; left: 20px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: white; border: none; font-size: 20px; cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10;
+}
+.badge-status-overlay {
+    position: absolute; top: 20px; right: 20px;
+    background: #00c853; color: white; padding: 6px 15px;
+    border-radius: 20px; font-weight: bold; font-size: 13px; z-index: 10;
+}
+
+/* --- DERECHA (FORMULARIO) --- */
+.modal-right {
+    flex: 1; padding: 40px; overflow-y: auto;
+    display: flex; flex-direction: column;
+}
+
+.edit-header-text h2 { font-size: 28px; color: #333; margin-bottom: 5px; }
+.edit-header-text p { font-size: 18px; color: #666; margin-bottom: 25px; }
+.icon-header { font-size: 14px; color: #FF6600; margin-left: 8px; cursor: pointer; }
+
+/* Inputs estilo "Crema" */
+.edit-group { margin-bottom: 15px; }
+.edit-group label { 
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: #666; margin-bottom: 5px; 
+}
+.edit-group label i { color: #FF6600; } /* Iconos naranjas en label */
+
+.edit-input-wrapper {
+    position: relative;
+    background-color: #fff8f5; /* El color crema de tu diseño */
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+.edit-input-wrapper:hover { border-color: #ffe0b2; }
+
+.edit-input-wrapper input,
+.edit-input-wrapper textarea,
+.edit-input-wrapper select {
+    width: 100%; padding: 12px 15px; padding-right: 35px;
+    background: transparent; border: none; outline: none;
+    font-size: 15px; color: #333; font-family: 'Poppins', sans-serif;
+}
+.edit-input-wrapper select { appearance: none; cursor: pointer; }
+
+.input-pen {
+    position: absolute; right: 15px; top: 15px;
+    color: #FF6600; pointer-events: none; font-size: 12px;
+}
+
+/* Botones Finales */
+.edit-footer {
+    margin-top: 30px; display: flex; gap: 15px; justify-content: flex-end;
+}
+.btn-cancel-edit {
+    background: white; border: 1px solid #ddd; padding: 12px 25px;
+    border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+.btn-save-edit {
+    background: #FF6600; color: white; border: none; padding: 12px 25px;
+    border-radius: 8px; cursor: pointer; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+}
+.btn-save-edit:hover { background: #e65c00; }

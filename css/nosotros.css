@@ -1,0 +1,195 @@
+/* --- Reseteo Básico --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { 
+    background-color: #f0f2f5; 
+    color: #333; 
+}
+a { text-decoration: none; }
+
+/* --- HEADER (Barra de Navegación) --- */
+.main-header {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo-container { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #333; }
+.logo-icon { color: #FF6600; font-size: 26px; }
+
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+
+.nav-link { 
+    color: #666; font-weight: 600; font-size: 15px; 
+    display: flex; align-items: center; gap: 8px; transition: color 0.3s; 
+}
+.nav-link:hover, .nav-link.active { color: #FF6600; }
+
+/* --- ESTILOS DE LOS BOTONES DEL HEADER (LO QUE FALTABA) --- */
+.header-buttons { 
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
+}
+
+/* Estilos Generales de Botones */
+.btn { 
+    padding: 8px 20px; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    font-size: 14px; 
+    transition: all 0.3s; 
+    cursor: pointer; 
+    display: inline-block; 
+}
+
+/* Botón Borde Naranja (Iniciar Sesión) */
+.btn-outline { 
+    border: 2px solid #FF6600; 
+    color: #FF6600; 
+    background: transparent; 
+}
+.btn-outline:hover { 
+    background-color: #fff0e6; 
+}
+
+/* Botón Relleno Naranja (Registrarse) */
+.btn-solid { 
+    background-color: #FF6600; 
+    color: white; 
+    border: 2px solid #FF6600; 
+}
+.btn-solid:hover { 
+    background-color: #e65c00; 
+    border-color: #e65c00; 
+}
+
+/* --- PANEL DE USUARIO (Cuando ya iniciaste sesión) --- */
+.user-profile { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.user-name { 
+    color: #333; 
+    font-size: 14px; 
+    font-weight: 500;
+}
+
+.avatar-img { 
+    width: 35px; 
+    height: 35px; 
+    border-radius: 50%; 
+    border: 2px solid #FF6600; 
+    object-fit: cover;
+}
+
+.btn-logout { 
+    background: none; 
+    border: none; 
+    color: #666; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: color 0.3s; 
+}
+.btn-logout:hover { 
+    color: #FF6600; 
+}
+
+/* --- CONTENIDO PRINCIPAL (PÁGINA NOSOTROS) --- */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* --- SECCIÓN INTRODUCCIÓN --- */
+.intro-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.intro-text { flex: 1; }
+
+.title-group { margin-bottom: 20px; }
+.title-group h1 { font-size: 32px; color: #222; margin-bottom: 5px; font-weight: 700; }
+.underline { width: 60px; height: 4px; background-color: #FF6600; border-radius: 2px; }
+
+.intro-text h2 {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.intro-text p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.intro-image { flex: 1; }
+.intro-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- TARJETA OBJETIVO --- */
+.objective-card {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+}
+
+.objective-card h3 {
+    color: #FF6600;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.objective-card p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- SECCIÓN EQUIPO --- */
+.team-section h2 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 30px;
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Centro de Adopción</title>
+    <link rel="stylesheet" href="../css/index-admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <i class="fas fa-paw logo-icon"></i>
+            <span>Adopt-Me</span>
+        </div>
+
+        <nav class="nav-menu">
+    <a href="chat-admin.html" class="nav-link">
+        <i class="far fa-comment-dots"></i> Mensajes
+    </a>
+    
+    <a href="gestion-visitas.html" class="nav-link">
+        <i class="far fa-calendar-check"></i> Visitas
+    </a>
+    
+    <a href="comoadoptar.html" class="nav-link">Cómo Adoptar</a>
+    <a href="nosotros.html" class="nav-link">Nosotros</a>
+    
+    <a href="estadistica.html" class="nav-link">Estadísticas</a> 
+    
+    <div class="user-profile" id="panel-admin">
+        <span class="user-name">Hola, <b>Admin</b></span>
+        <div class="user-profile-icon" onclick="cerrarSesionAdmin()">
+            <i class="far fa-user"></i>
+        </div>
+    </div>
+</nav>
+    </header>
+
+    <main class="main-content">
+        <div class="admin-header-row">
+            <div>
+                <h1>Centro De Adopcion</h1>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Pequeño</button>
+                <button class="filter-btn">Mediano</button>
+                <button class="filter-btn">Grande</button>
+                <button class="filter-btn">Adulto</button>
+            </div>
+
+            <button class="btn-add">
+                Agregar <i class="fas fa-plus"></i>
+            </button>
+        </div>
+
+        <section class="pets-grid">
+            </section>
+    </main>
+
+    <div id="modalEditar" class="modal-overlay-edit hidden">
+        <div class="modal-card-edit">
+            <div class="modal-left">
+                <button class="btn-close-circle" onclick="cerrarModalEditar()">✕</button>
+                <span class="badge-status-overlay">Disponible</span>
+                <img id="imgEditPreview" src="" alt="Perro">
+            </div>
+
+            <div class="modal-right">
+                <div class="edit-header-text">
+                    <h2 id="tituloEdit">Max, 1 año <i class="fas fa-pen icon-header"></i></h2>
+                    <p id="razaEdit">Golden Retriever <i class="fas fa-pen icon-header"></i></p>
+                </div>
+
+                <form id="formEditarCompleto">
+                    <div class="edit-group">
+                        <label><i class="far fa-calendar-alt"></i> Edad</label>
+                        <div class="edit-input-wrapper">
+                            <input type="text" id="inputEdad" placeholder="Ej: 1 año">
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Refugio</label>
+                        <div class="edit-input-wrapper">
+                            <input type="text" id="inputRefugio" placeholder="Nombre del refugio">
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-group">
+                        <label><i class="fas fa-heartbeat"></i> Estado de Salud</label>
+                        <div class="edit-input-wrapper">
+                            <input type="text" id="inputSalud" placeholder="Ej: Vacunado">
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-group">
+                        <label><i class="fas fa-info-circle"></i> Condición Especial</label>
+                        <div class="edit-input-wrapper">
+                            <input type="text" id="inputCondicion" placeholder="Ej: Ninguna">
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-group">
+                        <label><i class="fas fa-circle" style="color:#00c853;"></i> Estado</label>
+                        <div class="edit-input-wrapper">
+                            <select id="inputEstado">
+                                <option value="Disponible">Disponible</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Adoptado">Adoptado</option>
+                            </select>
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-group">
+                        <label>Sobre</label>
+                        <div class="edit-input-wrapper">
+                            <textarea id="inputDescripcion" rows="3" placeholder="Descripción..."></textarea>
+                            <i class="fas fa-pen input-pen"></i>
+                        </div>
+                    </div>
+
+                    <div class="edit-footer">
+                        <button type="button" class="btn-cancel-edit" onclick="cerrarModalEditar()">Cancelar</button>
+                        <button type="submit" class="btn-save-edit"><i class="fas fa-save"></i> Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/index-admin.js"></script>
+</body>
+</html>

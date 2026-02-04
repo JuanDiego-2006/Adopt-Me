@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Mensajes Admin</title>
+    <link rel="stylesheet" href="../css/chat-admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="header-left">
+            <div class="logo-area">
+                <i class="fas fa-paw logo-icon"></i>
+                <span class="brand">Adopt-Me</span>
+            </div>
+            <span class="badge-role"><i class="fas fa-shield-alt"></i> Admin</span>
+        </div>
+
+        <div class="header-stats">
+            <div class="stat-item">
+                <span class="dot yellow"></span> 
+                <div class="stat-text">
+                    <b>2</b> <span>Pendientes</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <span class="dot green"></span>
+                <div class="stat-text">
+                    <b>1</b> <span>Respondidos</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="index-admin.html" class="btn-volver">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </header>
+
+    <div class="layout-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h2>Mensajes de Usuarios</h2>
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar por usuario o perrito...">
+                </div>
+
+                <div class="filter-pills">
+                    <button class="pill active">Todos</button>
+                    <button class="pill">Pendientes</button>
+                    <button class="pill">Respondidos</button>
+                </div>
+            </div>
+
+            <div class="chat-list" id="listaConversaciones">
+                </div>
+        </aside>
+
+        <main class="chat-panel">
+            
+            <div class="chat-header" id="chatHeaderContainer" style="display:none;">
+                <div class="user-profile-header">
+                    <img id="header-avatar" src="" alt="User">
+                    <div class="user-meta">
+                        <h3 id="header-name">Nombre Usuario</h3>
+                        <p id="header-email">correo@email.com</p>
+                        <div class="meta-question">
+                            Pregunta sobre: <span id="header-pet" class="orange-text">...</span>
+                            <span id="header-badge" class="status-badge">Pendiente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <img id="header-pet-img" src="" alt="Perro" class="pet-context-img">
+                    <button class="btn-close-chat" onclick="cerrarChatActual()">
+                        ✕ Cerrar
+                    </button>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesArea">
+                <div class="empty-state">
+                    <i class="far fa-paper-plane"></i>
+                    <h3>Selecciona una conversación</h3>
+                    <p>Elige un usuario de la lista izquierda para ver los detalles.</p>
+                </div>
+            </div>
+
+            <div class="input-area" id="inputAreaContainer" style="display:none;">
+                <div class="input-wrapper">
+                    <input type="text" id="adminInput" placeholder="Escribe tu respuesta...">
+                    <button id="btnEnviar" class="btn-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="helper-text">Respondiendo como administrador del refugio</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../js/chat-admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt-Me | Mensajes</title>
+    <link rel="stylesheet" href="../css/vistachat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="chat-header">
+        <div class="logo-area">
+            <i class="fas fa-paw logo-icon"></i>
+            <span>Adopt-Me</span>
+        </div>
+        <button id="btn-volver" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
+    </header>
+
+    <div class="chat-layout">
+        
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Mensajes</h2>
+            
+            <div class="contact-list">
+                <div class="contact-item active">
+                    <div class="avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=100&q=80" alt="Refugio" class="avatar">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=50&q=80" alt="Max" class="sub-avatar">
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-top">
+                            <h4>Refugio Adopt-Me</h4>
+                            <span class="time">Hace 5 min</span>
+                        </div>
+                        <div class="contact-bottom">
+                            <p>¡Hola! Claro, Max estará disponible</p>
+                            <span class="badge">2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <img src="https://ui-avatars.com/api/?name=Vet&background=eee&color=333" alt="Vet" class="avatar">
+                    <div class="contact-info">
+                        <div class="contact-top">
+                            <h4>Veterinaria Central</h4>
+                            <span class="time">Ayer</span>
+                        </div>
+                        <div class="contact-bottom">
+                            <p>Su cita está confirmada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            
+            <div class="chat-main-header">
+                <div class="chat-partner-info">
+                    <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=100&q=80" alt="Refugio">
+                    <h3>Refugio Adopt-Me</h3>
+                </div>
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=100&q=80" class="pet-thumbnail" alt="Max">
+            </div>
+
+            <div class="messages-container" id="messages-container">
+                <div class="message sent">
+                    <div class="bubble">
+                        Hola, estoy interesado en adoptar a Max. ¿Cuándo puedo visitarlo?
+                        <span class="msg-time"><i class="far fa-clock"></i> 10:30 AM</span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <div class="bubble">
+                        ¡Hola! Nos alegra mucho tu interés en Max. Él es un perrito maravilloso.
+                        <span class="msg-time"><i class="far fa-clock"></i> 10:32 AM</span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <div class="bubble">
+                        Puedes venir a conocerlo mañana a partir de las 10:00 AM. ¿Te viene bien ese horario?
+                        <span class="msg-time"><i class="far fa-clock"></i> 10:32 AM</span>
+                    </div>
+                </div>
+
+                <div class="message sent">
+                    <div class="bubble">
+                        Perfecto! Estaré ahí a las 10:30 AM. ¿Necesito llevar algún documento?
+                        <span class="msg-time"><i class="far fa-clock"></i> 10:35 AM</span>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <div class="bubble">
+                        ¡Hola! Claro, Max estará disponible mañana.
+                        <span class="msg-time"><i class="far fa-clock"></i> 10:40 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                <button id="send-btn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../js/vistachat.js"></script>
+</body>
+</html>
