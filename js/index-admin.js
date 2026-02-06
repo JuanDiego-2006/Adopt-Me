@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. GUARDAR CAMBIOS
+    // 5. GUARDAR CAMBIOS (CON VALIDACIÓN DE EDAD)
     const formEditar = document.getElementById('formEditarCompleto');
     if(formEditar) {
         formEditar.addEventListener('submit', (e) => {
@@ -55,6 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nuevaEdad = document.getElementById('inputEdad').value;
                 const nuevoEstado = document.getElementById('inputEstado').value;
                 const nombreOriginal = document.getElementById('tituloEdit').innerText.split(',')[0];
+
+                // --- VALIDACIÓN DE EDAD NEGATIVA ---
+                const edadNumero = parseInt(nuevaEdad);
+                // Si es un número negativo o el texto tiene un guion "-"
+                if ((!isNaN(edadNumero) && edadNumero < 0) || nuevaEdad.includes('-')) {
+                    alert("Error: La edad no puede ser negativa.");
+                    document.getElementById('inputEdad').focus();
+                    return; // Detiene el guardado
+                }
 
                 // ACTUALIZAR TÍTULO
                 tarjetaEditando.querySelector('h3').innerHTML = `${nombreOriginal}, <span>${nuevaEdad}</span>`;
@@ -69,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if(nuevoEstado === 'Adoptado') badge.classList.add('adoptado');
                 else badge.classList.add('disponible');
 
-                alert("¡Cambios aplicados visualmente!");
+                alert("¡Cambios aplicados correctamente!");
                 cerrarModalEditar();
             }
         });

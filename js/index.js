@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. SESIÓN Y VISUALIZACIÓN
+    // 1. SESIÓN
     const isLogged = localStorage.getItem('usuarioLogueado');
     const rol = localStorage.getItem('rolUsuario');
 
-    // --- CORRECCIÓN CLAVE: SI ES ADMIN, REDIRIGIR AL PANEL ADMIN ---
     if (isLogged === 'true' && rol === 'admin') {
         window.location.href = 'html/index-admin.html';
-        return; // Detenemos la carga del index de usuario
+        return; 
     }
-    // -------------------------------------------------------------
 
     const botonesInvitado = document.getElementById('botones-invitado');
     const panelUsuario = document.getElementById('panel-usuario');
@@ -24,9 +22,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if(panelUsuario) panelUsuario.style.display = 'none';
     }
 
-    // 2. MODAL DETALLE MASCOTA
+    // ============================================
+    // 2. LÓGICA DE FILTROS (NUEVO CÓDIGO)
+    // ============================================
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const petCards = document.querySelectorAll('.pet-card');
+
+    if (filterBtns.length > 0 && petCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // a) Quitar clase 'active' de todos y ponerla al clickeado
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // b) Obtener el filtro (en minúsculas)
+                const filtro = btn.getAttribute('data-filter') || btn.textContent.toLowerCase();
+
+                // c) Mostrar u ocultar tarjetas
+                petCards.forEach(card => {
+                    const tags = card.getAttribute('data-tags');
+                    
+                    if (filtro === 'todos') {
+                        card.style.display = 'block'; // Mostrar todo
+                    } else {
+                        // Si las etiquetas de la tarjeta incluyen el filtro, mostrar
+                        if (tags && tags.includes(filtro)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    // 3. MODAL DETALLE MASCOTA
     const modalMascota = document.getElementById('modal-mascota');
-    const closeMascotaBtn = document.querySelector('.close-modal');
+    const closeMascotaBtn = document.querySelector('.btn-close-vert'); 
     const botonesConocer = document.querySelectorAll('.btn-conocer');
 
     if (botonesConocer.length > 0) {
@@ -49,23 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cerrar al dar click fuera
     window.addEventListener('click', (e) => {
         if (modalMascota && e.target === modalMascota) modalMascota.style.display = 'none';
     });
 });
 
-function irASolicitud() {
-    window.location.href = 'html/solicitud.html';
+// FUNCIONES GLOBALES
+function cerrarModal() {
+    const modal = document.getElementById('modal-mascota');
+    if(modal) modal.style.display = 'none';
 }
 
-function irAAgendar() {
-    window.location.href = 'html/agendar.html';
+function irASolicitud() {
+    window.location.href = 'html/solicitud.html';
 }
 
 function cerrarSesion() {
     localStorage.removeItem('usuarioLogueado');
     localStorage.removeItem('nombreUsuario');
-    localStorage.removeItem('rolUsuario'); // Importante borrar el rol
+    localStorage.removeItem('rolUsuario'); 
     window.location.reload();
 }

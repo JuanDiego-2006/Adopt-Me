@@ -32,12 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkMensajes = document.querySelector('a[href="vistachat.html"]');
             if (linkMensajes) linkMensajes.href = 'chat-admin.html';
 
-            const linkVisitas = document.querySelector('a[href="mis-visitas.html"]');
-            if (linkVisitas) {
-                linkVisitas.href = 'gestion-visitas.html';
-                linkVisitas.innerHTML = '<i class="far fa-calendar-check"></i> Visitas'; 
-            }
-
             // 3. MOSTRAR BOTÓN DE ESTADÍSTICAS (Solo Admin)
             if (btnEstadisticas) {
                 btnEstadisticas.style.display = 'flex';

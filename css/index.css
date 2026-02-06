@@ -1,575 +1,187 @@
 /* ========================================= */
-/* 1. RESETEO Y ESTILOS GENERALES            */
+/* 1. ESTILOS GENERALES (PRINCIPAL)          */
 /* ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: #f8f9fa; color: #333; }
+a { text-decoration: none; }
 
-body {
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* ========================================= */
-/* 2. HEADER (ENCABEZADO)                    */
-/* ========================================= */
+/* HEADER */
 .main-header {
-    background-color: #ffffff;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background-color: #ffffff; height: 80px; display: flex;
+    justify-content: space-between; align-items: center; padding: 0 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;
 }
+.logo-container { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: #333; }
+.logo-icon { color: #FF6600; font-size: 26px; }
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-link { color: #666; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
+.nav-link:hover { color: #FF6600; }
+.header-buttons { display: flex; gap: 15px; }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 800;
-    color: #333;
-}
+/* Botones y Perfil */
+.btn { padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s; }
+.btn-outline { border: 2px solid #FF6600; color: #FF6600; background: transparent; }
+.btn-outline:hover { background-color: #fff0e6; }
+.btn-solid { background-color: #FF6600; color: white; border: 2px solid #FF6600; }
+.btn-solid:hover { background-color: #e65c00; border-color: #e65c00; }
+.user-profile { display: flex; align-items: center; gap: 15px; }
+.profile-link-wrapper { text-decoration: none; color: #333 !important; display: flex; align-items: center; gap: 10px; }
+.user-name { color: #333; font-size: 15px; }
+.avatar-img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #FF6600; object-fit: cover; }
+.btn-logout { background: none; border: none; color: #666; font-size: 18px; cursor: pointer; }
 
-.logo-icon {
-    color: #FF6600;
-    font-size: 26px;
-}
+/* CONTENIDO PRINCIPAL */
+.main-content { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.hero-section h1 { font-size: 32px; color: #222; margin-bottom: 10px; }
+.underline { width: 60px; height: 4px; background-color: #FF6600; margin-bottom: 30px; border-radius: 2px; }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 20px; border: 1px solid #eee; background-color: #fff; border-radius: 6px; color: #555; font-weight: 500; cursor: pointer; }
+.filter-btn:hover { background-color: #f0f0f0; }
+.filter-btn.active { background-color: #FF6600; color: white; border-color: #FF6600; }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-link {
-    color: #666;
-    font-weight: 600;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #FF6600;
-}
-
-/* Botones de Invitado (Login/Registro) */
-.header-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-outline {
-    border: 2px solid #FF6600;
-    color: #FF6600;
-    background: transparent;
-}
-
-.btn-outline:hover {
-    background-color: #fff0e6;
-}
-
-.btn-solid {
-    background-color: #FF6600;
-    color: white;
-    border: 2px solid #FF6600;
-}
-
-.btn-solid:hover {
-    background-color: #e65c00;
-    border-color: #e65c00;
-}
-
-/* --- PERFIL DE USUARIO (CORRECCIÓN COLOR AZUL) --- */
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* ESTO ES LO QUE ARREGLA QUE NO SE VEA AZUL */
-.profile-link-wrapper {
-    text-decoration: none;
-    color: #333 !important; /* Fuerza el color oscuro */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.profile-link-wrapper:hover .user-name {
-    color: #FF6600; /* Efecto naranja al pasar el mouse */
-}
-
-.user-name {
-    color: #333;
-    font-size: 15px;
-}
-
-.avatar-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #FF6600;
-    object-fit: cover;
-}
-
-.btn-logout {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 18px;
-    cursor: pointer;
-    transition: color 0.3s;
-    padding: 5px;
-}
-
-.btn-logout:hover {
-    color: #FF6600;
-}
-
-/* ========================================= */
-/* 3. CONTENIDO PRINCIPAL (HERO Y FILTROS)   */
-/* ========================================= */
-.main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.hero-section {
-    margin-bottom: 40px;
-}
-
-.hero-section h1 {
-    font-size: 32px;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.underline {
-    width: 60px;
-    height: 4px;
-    background-color: #FF6600;
-    margin-bottom: 30px;
-    border-radius: 2px;
-}
-
-.filters {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 8px 20px;
-    border: 1px solid #eee;
-    background-color: #fff;
-    border-radius: 6px;
-    color: #555;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.filter-btn:hover {
-    background-color: #f0f0f0;
-}
-
-.filter-btn.active {
-    background-color: #FF6600;
-    color: white;
-    border-color: #FF6600;
-}
-
-/* ========================================= */
-/* 4. GRID DE TARJETAS (PERRITOS)            */
-/* ========================================= */
-.pets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.pet-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
-}
-
-.pet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.card-image {
-    width: 100%;
-    height: 250px;
-    position: relative;
-}
-
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    color: white;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
+/* GRID DE TARJETAS */
+.pets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+.pet-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; transition: transform 0.3s ease; }
+.pet-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.card-image { width: 100%; height: 250px; position: relative; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+.badge { position: absolute; top: 15px; right: 15px; padding: 4px 12px; border-radius: 20px; color: white; font-size: 12px; font-weight: 600; text-transform: uppercase; }
 .badge.disponible { background-color: #28a745; }
 .badge.pendiente { background-color: #ffc107; color: #333; }
 .badge.adoptado { background-color: #007bff; }
+.card-info { padding: 20px; }
+.pet-header h3 { font-size: 18px; color: #222; margin: 0; }
+.pet-header h3 span { font-weight: 400; color: #777; font-size: 16px; margin-left: 5px; }
+.breed { color: #888; font-size: 14px; margin-bottom: 20px; }
 
-.card-info {
-    padding: 20px;
+/* FOOTER TARJETA SIN CORAZÓN */
+.card-footer { display: flex; justify-content: center; align-items: center; }
+
+/* BOTÓN CONOCER (Ahora ocupa todo el ancho) */
+.btn-conocer { 
+    background-color: #FF6600; color: white; border: none; 
+    padding: 10px 20px; border-radius: 6px; font-weight: 600; 
+    cursor: pointer; width: 100%; text-align: center;
 }
 
-.pet-header {
+/* ======================================================= */
+/* 2. ESTILOS DEL MODAL (LISTA VERTICAL - IMAGEN 2)        */
+/* ======================================================= */
+
+.modal-overlay-vert {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); z-index: 10000;
+    justify-content: center; align-items: center; padding: 20px;
+}
+
+.modal-card-vert {
+    background: #fff; width: 100%; max-width: 950px;
+    border-radius: 20px; overflow: hidden; position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3); animation: popIn 0.3s ease;
+}
+
+@keyframes popIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.modal-body-vert { display: flex; min-height: 580px; }
+
+/* IZQUIERDA: Foto + X */
+.col-img-vert {
+    flex: 1.1; position: relative; background-color: #eee;
+}
+.col-img-vert img { width: 100%; height: 100%; object-fit: cover; }
+
+.badge-vert {
+    position: absolute; top: 25px; left: 25px;
+    background-color: #28a745; color: white;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; z-index: 10;
+}
+
+/* Botón Cerrar (X) */
+.btn-close-vert {
+    position: absolute; top: 20px; right: 20px;
+    width: 36px; height: 36px; background-color: white;
+    border: none; border-radius: 50%;
+    font-size: 20px; color: #555; cursor: pointer; z-index: 50;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.2s;
+}
+.btn-close-vert:hover { transform: scale(1.1); color: #000; }
+
+/* DERECHA: Información */
+.col-info-vert {
+    flex: 1; padding: 50px; display: flex; flex-direction: column;
+    background-color: #ffffff;
+}
+
+/* Header */
+.header-vert h2 { font-size: 36px; color: #222; margin: 0 0 5px 0; font-weight: 700; }
+.header-vert h2 span { font-weight: 300; color: #555; font-size: 30px; margin-left: 5px; }
+.breed-vert { color: #888; font-size: 18px; margin-bottom: 30px; }
+
+/* --- LISTA VERTICAL --- */
+.details-list-vertical {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 5px;
-}
-
-.pet-header h3 {
-    font-size: 18px;
-    color: #222;
-    margin: 0;
-}
-
-.pet-header h3 span {
-    font-weight: 400;
-    color: #777;
-    font-size: 16px;
-    margin-left: 5px;
-}
-
-.breed {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.heart-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.heart-btn:hover {
-    color: #FF6600;
-}
-
-.btn-conocer {
-    background-color: #FF6600;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-conocer:hover {
-    background-color: #e65c00;
-}
-
-/* ========================================= */
-/* 5. MODAL DETALLE DE MASCOTA               */
-/* ========================================= */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-content {
-    background-color: #fff;
-    width: 100%;
-    max-width: 900px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-    animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #666;
-    cursor: pointer;
-    z-index: 10;
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.close-modal:hover {
-    color: #333;
-    transform: scale(1.1);
-}
-
-.modal-grid {
-    display: flex;
-    min-height: 600px;
-}
-
-.modal-image {
-    flex: 1;
-    position: relative;
-    background-color: #f0f0f0;
-}
-
-.modal-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.modal-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.modal-info {
-    flex: 1.1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-.modal-header-text h2 {
-    font-size: 28px;
-    color: #222;
-    margin-bottom: 5px;
-}
-
-.modal-header-text h2 span {
-    font-weight: 400;
-    color: #666;
-    font-size: 22px;
-}
-
-.modal-breed {
-    color: #888;
-    font-size: 16px;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    gap: 20px; /* Espacio entre cada fila */
     margin-bottom: 30px;
 }
 
-.modal-details-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.detail-item {
+.detail-row {
     display: flex;
     gap: 15px;
-    background: #fff8f5;
-    padding: 15px;
-    border-radius: 12px;
+    align-items: flex-start; /* Alinea icono y texto arriba */
 }
 
-.icon-sq {
-    color: #FF6600;
-    font-size: 20px;
-    margin-top: 2px;
+/* Icono naranja */
+.icon-wrap {
+    width: 24px; display: flex; justify-content: center;
+    margin-top: 3px;
+}
+.icon-orange {
+    color: #FF6600; font-size: 22px;
 }
 
-.detail-item small {
-    color: #888;
-    font-size: 12px;
-    display: block;
-}
+.text-wrap { display: flex; flex-direction: column; }
 
-.detail-item p {
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 0;
-}
+.label-vert { display: block; font-size: 13px; color: #888; margin-bottom: 3px; }
+.val-vert { display: block; font-size: 16px; color: #222; font-weight: 600; line-height: 1.3; }
 
-.health-tags {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 5px;
-}
+.txt-green { color: #28a745; font-weight: 600; }
 
-.tag-green, .text-green { color: #28a745; font-size: 13px; font-weight: 600; }
-.tag-blue { color: #007bff; font-size: 13px; font-weight: 600; }
-.tag-orange {
-    background: #FF6600;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-}
+/* Píldoras de Salud */
+.pills-container-vert { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
 
-.modal-description h3 {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-    font-weight: 500;
+.pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 13px; font-weight: 600;
 }
+.dot { width: 6px; height: 6px; border-radius: 50%; }
 
-.modal-description p {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.pill-green { background-color: #e8f5e9; color: #2e7d32; }
+.dot.g { background-color: #2e7d32; }
+
+.pill-blue { background-color: #e3f2fd; color: #1976d2; }
+.dot.b { background-color: #1976d2; }
+
+/* Bio */
+.bio-vert h3 { font-size: 18px; color: #333; margin-bottom: 10px; font-weight: 600; }
+.bio-vert p { color: #555; font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+
+/* Footer Botón */
+.footer-vert { margin-top: auto; }
+.btn-adopt-vert {
+    width: 100%; background-color: #FF6600; color: white; border: none;
+    padding: 16px; border-radius: 10px; font-size: 18px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    gap: 10px; transition: background 0.2s; box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
 }
+.btn-adopt-vert:hover { background-color: #e65c00; }
 
-/* Botones del Modal */
-.modal-buttons-container {
-    display: flex;
-    gap: 10px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.btn-adoptar-modal {
-    flex: 2;
-    background-color: #FF6600;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: 0.2s;
-}
-
-.btn-adoptar-modal:hover {
-    background-color: #e65c00;
-}
-
-.btn-agendar-modal {
-    flex: 2;
-    background-color: white;
-    color: #2F80ED;
-    border: 1px solid #2F80ED;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: 0.2s;
-}
-
-.btn-agendar-modal:hover {
-    background-color: #f0f7ff;
-}
-
-.btn-favoritos-modal {
-    flex: 2;
-    background-color: white;
-    color: #FF6600;
-    border: 1px solid #FF6600;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: 0.2s;
-}
-
-.btn-favoritos-modal:hover {
-    background-color: #fff5eb;
-}
-
-/* Media Query para móviles */
+/* Responsive */
 @media (max-width: 768px) {
-    .modal-grid { flex-direction: column; }
-    .modal-image { height: 250px; flex: none; }
-    .modal-content { max-width: 95%; height: 90vh; overflow-y: auto; }
+    .modal-body-vert { flex-direction: column; }
+    .col-img-vert { height: 250px; flex: none; }
+    .modal-card-vert { max-width: 95%; height: 90vh; overflow-y: auto; }
 }
